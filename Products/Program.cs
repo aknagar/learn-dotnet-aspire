@@ -1,3 +1,4 @@
+using Azure.Security.KeyVault.Secrets;
 using Microsoft.EntityFrameworkCore;
 using Products.Data;
 using Products.Endpoints;
@@ -5,7 +6,8 @@ using Products.Endpoints;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-builder.Configuration.AddAzureKeyVaultSecrets("secrets", settings => settings.DisableHealthChecks = true);
+//Add Keyvault client
+builder.AddAzureKeyVaultClient("secrets", settings => settings.DisableHealthChecks = true);
 builder.Services.AddDbContext<ProductDataContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("ProductsContext") ?? throw new InvalidOperationException("Connection string 'ProductsContext' not found.")));
 
@@ -14,8 +16,10 @@ var app = builder.Build();
 
 app.MapDefaultEndpoints();
 
+var secretClient = app.Services.GetService<SecretClient>();
+
 // Configure the HTTP request pipeline.
-app.MapProductEndpoints();
+app.MapProductEndpoints(secretClient);
 
 app.UseStaticFiles();
 

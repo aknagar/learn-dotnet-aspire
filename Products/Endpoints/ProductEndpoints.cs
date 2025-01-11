@@ -1,4 +1,5 @@
-﻿using DataEntities;
+﻿using Azure.Security.KeyVault.Secrets;
+using DataEntities;
 using Microsoft.EntityFrameworkCore;
 using Products.Data;
 
@@ -6,9 +7,11 @@ namespace Products.Endpoints;
 
 public static class ProductEndpoints
 {
-    public static void MapProductEndpoints (this IEndpointRouteBuilder routes)
+    public static void MapProductEndpoints (this IEndpointRouteBuilder routes, SecretClient secretClient)
     {
         var group = routes.MapGroup("/api/Product");
+
+        var secret = secretClient.GetSecret("AspireTestSecret");
 
         group.MapGet("/", async (ProductDataContext db) =>
         {
