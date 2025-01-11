@@ -43,12 +43,13 @@ module keyvault './core/security/keyvault.bicep' = {
 }
 
 // Give the API access to KeyVault
+/*
 module apiKeyVaultAccess './core/security/keyvault-access.bicep' = {
   name: 'api-keyvault-access'
   scope: rg
   params: {
     keyVaultName: keyvault.outputs.name
-    principalId: 'eca4e332-f497-451b-9aa0-2449d32a30c5'
+    principalId: '<put your principal id here>'
   }
 }
-
+*/
