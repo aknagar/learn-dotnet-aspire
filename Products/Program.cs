@@ -5,6 +5,7 @@ using Products.Endpoints;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
+builder.Configuration.AddAzureKeyVaultSecrets("secrets", settings => settings.DisableHealthChecks = true);
 builder.Services.AddDbContext<ProductDataContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("ProductsContext") ?? throw new InvalidOperationException("Connection string 'ProductsContext' not found.")));
 
