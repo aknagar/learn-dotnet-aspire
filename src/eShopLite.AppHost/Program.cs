@@ -7,4 +7,7 @@ builder.AddProject<Projects.Store>("store")
     .WithReference(products);  // store project depends on products project
 
 
+builder.AddProject<Projects.eShopLite_Api>("eshoplite-api");
+
+
 builder.Build().Run();
