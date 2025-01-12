@@ -1,3 +1,6 @@
+using Aspire.Hosting.Dapr;
+using System.Collections.Immutable;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
 /*
@@ -21,6 +24,5 @@ builder.AddProject<Projects.eShopLite_Worker>("eshoplite-worker");
 
 
 builder.AddProject<Projects.eShop_Workflow_TaskChaining>("eshop-workflow-taskchaining");
-
 
 builder.Build().Run();

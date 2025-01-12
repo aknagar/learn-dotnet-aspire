@@ -7,7 +7,9 @@
 https://medium.com/@ravipatel.it/managing-configuration-and-environment-variables-in-net-b1c10d69d3d2
 https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/manage-environment-variables#environment-specific-env-file
 
-
+###
+Aspire with Dapr
+https://github.com/SiddyHub/DaprWithAspire
 
 # Deploy a cloud-native application automatically
 
