@@ -1,0 +1,24 @@
+﻿using Dapr.Workflow;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace eShop.Workflow.TaskChaining.Activities
+{
+    internal sealed class Step3 : WorkflowActivity<int, int>
+    {
+        /// <summary>
+        /// Override to implement async (non-blocking) workflow activity logic.
+        /// </summary>
+        /// <param name="context">Provides access to additional context for the current activity execution.</param>
+        /// <param name="input">The deserialized activity input.</param>
+        /// <returns>The output of the activity as a task.</returns>
+        public override Task<int> RunAsync(WorkflowActivityContext context, int input)
+        {
+            Console.WriteLine($@"Step 3: Received input: {input}.");
+            return Task.FromResult(input ^ 2);
+        }
+    }
+}

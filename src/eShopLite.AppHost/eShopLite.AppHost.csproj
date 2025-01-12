@@ -14,9 +14,11 @@
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0" />
     <PackageReference Include="Aspire.Hosting.Azure.ServiceBus" Version="9.0.0" />
+    <PackageReference Include="Aspire.Hosting.Dapr" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\eShop.Workflow.TaskChaining\eShop.Workflow.TaskChaining.csproj" />
     <ProjectReference Include="..\eShopLite.Api\eShopLite.Api.csproj" />
     <ProjectReference Include="..\eShopLite.Worker\eShopLite.Worker.csproj" />
     <ProjectReference Include="..\Products\Products.csproj" />
