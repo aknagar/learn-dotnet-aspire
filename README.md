@@ -3,6 +3,10 @@
 
 [Aspire Samples](https://learn.microsoft.com/en-us/samples/browse/?expanded=dotnet&terms=aspire)
 
+### Environment variables
+https://medium.com/@ravipatel.it/managing-configuration-and-environment-variables-in-net-b1c10d69d3d2
+
+
 # Deploy a cloud-native application automatically
 
 The code in this repository supports a Learn module focused on automating CI/CD with .NET. The module shows you how to:

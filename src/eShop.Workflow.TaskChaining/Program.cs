@@ -19,7 +19,7 @@ var builder = Host.CreateDefaultBuilder().ConfigureServices(services =>
 // Start the app - this is the point where we connect to the Dapr sidecar to listen 
 // for workflow work-items to execute
 var host = builder.Build();
-host.StartAsync();
+host.RunAsync();
 
 await using var scope = host.Services.CreateAsyncScope();
 var daprWorkflowClient = scope.ServiceProvider.GetRequiredService<DaprWorkflowClient>();
