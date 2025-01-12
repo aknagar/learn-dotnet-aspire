@@ -12,10 +12,13 @@ param location string
 param appName string = 'aspire'
 param uniqueSeed string = uniqueString(environmentName, appName)
 
+param userPrincipalId string
+
 var abbrs = loadJsonContent('./abbreviations.json')
 //var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
 
 var resourceToken = '${environmentName}-${uniqueSeed}'
+
 
 
 // Tags that should be applied to all resources.
@@ -64,7 +67,7 @@ module apiKeyVaultAccess './core/security/keyvault-access.bicep' = {
   scope: rg
   params: {
     keyVaultName: keyvault.outputs.name
-    principalId: userManagedIdentity.outputs.principalId
+    principalId: userPrincipalId //userManagedIdentity.outputs.principalId
   }
 }
 
