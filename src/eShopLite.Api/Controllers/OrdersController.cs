@@ -41,5 +41,11 @@ namespace eShopLite.Api.Controllers
 
             return Accepted();
         }
+
+        [HttpGet]
+        public async Task<string> Get()
+        {
+            return "Hello !";
+        }
     }
 }

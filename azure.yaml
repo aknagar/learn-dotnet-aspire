@@ -4,5 +4,5 @@ name: learn-dotnet-aspire
 services:  
   app:
     language: dotnet
-    project: ./eShopLite.AppHost/eShopLite.AppHost.csproj
+    project: ./src/eShopLite.AppHost/eShopLite.AppHost.csproj
     host: containerapp

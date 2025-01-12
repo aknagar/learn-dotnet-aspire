@@ -12,6 +12,12 @@ param location string
 param appName string = 'aspire'
 param uniqueSeed string = uniqueString(environmentName, appName)
 
+var abbrs = loadJsonContent('./abbreviations.json')
+//var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
+
+var resourceToken = '${environmentName}-${uniqueSeed}'
+
+
 // Tags that should be applied to all resources.
 // 
 // Note that 'azd-service-name' tags should be applied separately to service host resources.
@@ -31,6 +37,15 @@ resource rg 'Microsoft.Resources/resourceGroups@2022-09-01' = {
 // Infrastructure
 ////////////////////////////////////////////////////////////////////////////////
 
+// Create a user assigned identity
+module userManagedIdentity './core//identity/user-assigned-identity.bicep' = {
+  name: 'identity'
+  scope: rg
+  params: {
+    name: 'umi-${environmentName}-${uniqueSeed}'
+  }
+}
+
 // Create a key vault
 module keyvault './core/security/keyvault.bicep' = {
   name: 'keyvault'
@@ -43,16 +58,16 @@ module keyvault './core/security/keyvault.bicep' = {
 }
 
 // Give the API access to KeyVault
-/*
+
 module apiKeyVaultAccess './core/security/keyvault-access.bicep' = {
   name: 'api-keyvault-access'
   scope: rg
   params: {
     keyVaultName: keyvault.outputs.name
-    principalId: '<put your principal id here>'
+    principalId: userManagedIdentity.outputs.principalId
   }
 }
-*/
+
 
 module serviceBusResources './core/servicebus/servicebus.bicep' = {
   name: 'sb-resources'
@@ -60,7 +75,18 @@ module serviceBusResources './core/servicebus/servicebus.bicep' = {
   params: {
     location: location
     tags: tags
-    resourceToken: '${environmentName}-${uniqueSeed}'
+    resourceToken: resourceToken
     skuName: 'Standard'
+  }
+}
+
+// Get Service bus access
+module serviceBusAccess './core/servicebus/servicebus-access.bicep' = {
+  name: 'sb-access'
+  scope: rg
+  params: {
+    location: location
+    serviceBusName: serviceBusResources.outputs.serviceBusName
+    managedIdentityName: '${abbrs.managedIdentityUserAssignedIdentities}${resourceToken}'
   }
 }
