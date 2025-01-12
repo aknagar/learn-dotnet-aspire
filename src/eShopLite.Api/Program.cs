@@ -2,6 +2,7 @@ using Api.Routes.Weather;
 using eShopLite.Api.Routes;
 using Application;
 using Infrastructure;
+using Microsoft.Extensions.Azure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,9 @@ builder.AddInfrastructure();
 
 //Add Keyvault client
 builder.AddAzureKeyVaultClient("secrets", settings => settings.DisableHealthChecks = true);
+
+// Add Service Bus client
+builder.AddAzureServiceBusClient("serviceBus");
 
 var app = builder.Build();
 

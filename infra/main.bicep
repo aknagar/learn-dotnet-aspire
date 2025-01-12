@@ -53,3 +53,14 @@ module apiKeyVaultAccess './core/security/keyvault-access.bicep' = {
   }
 }
 */
+
+module serviceBusResources './core/servicebus/servicebus.bicep' = {
+  name: 'sb-resources'
+  scope: rg
+  params: {
+    location: location
+    tags: tags
+    resourceToken: '${environmentName}-${uniqueSeed}'
+    skuName: 'Standard'
+  }
+}

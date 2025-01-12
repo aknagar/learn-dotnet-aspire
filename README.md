@@ -1,3 +1,8 @@
+###
+[Azure Developer CLI Sample browser](https://azure.github.io/awesome-azd/)
+
+[Aspire Samples](https://learn.microsoft.com/en-us/samples/browse/?expanded=dotnet&terms=aspire)
+
 # Deploy a cloud-native application automatically
 
 The code in this repository supports a Learn module focused on automating CI/CD with .NET. The module shows you how to:
