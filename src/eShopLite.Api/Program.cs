@@ -3,6 +3,7 @@ using eShopLite.Api.Routes;
 using Application;
 using Infrastructure;
 using Microsoft.Extensions.Azure;
+using eShopLite.Api.Routes.Orders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,9 @@ app.MapDefaultEndpoints();
 // https://github.com/varianter/dotnet-template
 app.MapWeatherUserGroup()
    .MapWeatherAdminGroup();
+
+app.MapNotify();
+
 app.MapControllers();
 
 app.UseStaticFiles();

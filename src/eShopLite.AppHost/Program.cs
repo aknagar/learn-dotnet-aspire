@@ -10,4 +10,7 @@ builder.AddProject<Projects.Store>("store")
 builder.AddProject<Projects.eShopLite_Api>("eshoplite-api");
 
 
+builder.AddProject<Projects.eShopLite_Worker>("eshoplite-worker");
+
+
 builder.Build().Run();
