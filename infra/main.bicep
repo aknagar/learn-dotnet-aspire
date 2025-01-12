@@ -90,3 +90,13 @@ module serviceBusAccess './core/servicebus/servicebus-access.bicep' = {
     managedIdentityName: '${abbrs.managedIdentityUserAssignedIdentities}${resourceToken}'
   }
 }
+
+// Create Service bus topic
+module serviceBusTopic './core/servicebus/servicebus-topic.bicep' = {
+  name: 'createServiceBusTopic'
+  scope: rg
+  params: {
+    serviceBusNamespaceName: serviceBusResources.outputs.serviceBusName
+    topicName: 'notifications'
+  }
+}

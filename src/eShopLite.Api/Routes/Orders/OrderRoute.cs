@@ -7,7 +7,7 @@ namespace eShopLite.Api.Routes.Orders
         public static WebApplication MapNotify(this WebApplication app)
         {
             app.MapPost("/notify", static async (ServiceBusClient client, string message) =>
-            {
+            {                
                 var sender = client.CreateSender("notifications");
 
                 // Create a batch

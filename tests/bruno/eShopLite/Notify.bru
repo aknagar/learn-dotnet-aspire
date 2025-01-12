@@ -1,0 +1,19 @@
+meta {
+  name: Notify
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5116/notify?message=hello%20aspire
+  body: none
+  auth: none
+}
+
+params:query {
+  message: hello aspire
+}
+
+headers {
+  Content-Type: application/json
+}
