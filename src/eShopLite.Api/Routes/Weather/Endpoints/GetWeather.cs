@@ -10,7 +10,7 @@ public static class GetWeather
 {
     public static async Task<Results<Ok<GetWeatherResponse>, ProblemHttpResult>> Handle(
         IMediator mediator,
-        [FromQuery]string date)
+         string date)
     {
         var result = await mediator.Send(new GetForecastQuery { From = DateOnly.ParseExact(date, "yyyy-MM-dd") });
 
