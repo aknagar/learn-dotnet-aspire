@@ -20,7 +20,29 @@ https://github.com/SiddyHub/DaprWithAspire
     Start Workflow: POST http://localhost:49677/v1.0-beta1/workflows/dapr/AsyncWorkflow/start
     Check Workflow Status: http://localhost:49677/v1.0-beta1/workflows/dapr/<instance-id>
 
-# Deploy a cloud-native application automatically
+## Clean Architecture
+
+[Clean Architecture Reference](https://github.com/ardalis/CleanArchitecture/tree/main/src)
+
+root/
+
+* src
+    * AppHost
+    * UI
+    * Api
+    * UseCases
+    * Infrastructure
+    * Core
+        * Entities
+        * Interfaces
+        * Services
+        * Constants
+        * Exceptions
+    * ServiceDefaults
+* tests
+
+
+### Deploy a cloud-native application automatically
 
 The code in this repository supports a Learn module focused on automating CI/CD with .NET. The module shows you how to:
 
@@ -34,7 +56,7 @@ The code in this repository supports a Learn module focused on automating CI/CD 
 
 Take the moudle on [Microsoft Learn Training](https://learn.microsoft.com/training/modules/microservices-devops-aspnet-core/)
 
-# Contributing
+### Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
@@ -48,7 +70,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-# Legal Notices
+### Legal Notices
 
 Microsoft and any contributors grant you a license to the Microsoft documentation and other content
 in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
