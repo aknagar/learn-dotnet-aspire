@@ -4,11 +4,16 @@ using Application;
 using Infrastructure;
 using Microsoft.Extensions.Azure;
 using eShopLite.Api.Routes.Orders;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
+
+builder.Services.AddOpenApi();  // OpenAPI = swagger
+
 builder.Services.AddControllers(); 
+
 // Add other layers
 builder.AddApplication();
 builder.AddInfrastructure();
@@ -20,6 +25,13 @@ builder.AddAzureKeyVaultClient("secrets", settings => settings.DisableHealthChec
 builder.AddAzureServiceBusClient("serviceBus");
 
 var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi(); //publish endpoint at /openapi/v1.json
+    //app.MapScalarApiReference(); // similar to swagger UI at /scalar/v1
+};
 
 app.MapDefaultEndpoints();
 

@@ -28,7 +28,7 @@ app.MapDefaultEndpoints();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.MapOpenApi(); //publish endpoint at /openapi/v1.json
 }
 
 app.UseHttpsRedirection();

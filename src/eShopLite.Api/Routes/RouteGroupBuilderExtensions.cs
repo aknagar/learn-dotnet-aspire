@@ -1,6 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
 using Api.Authorization;
-using Api.Swagger;
 using AuthorizationPolicy = Api.Authorization.AuthorizationPolicy;
 
 namespace eShopLite.Api.Routes;
@@ -13,7 +12,7 @@ public static class RouteGroupBuilderExtensions
     {
         extraRequiredPolicies ??= [];
 
-        var group = endpoints.MapGroup(prefix).WithGroupName(SwaggerConfiguration.User);
+        var group = endpoints.MapGroup(prefix).WithGroupName("User");
             //.RequireAuthorization([AuthorizationPolicy.User, ..extraRequiredPolicies]);
 
         if (groupTagName != null)
@@ -30,7 +29,7 @@ public static class RouteGroupBuilderExtensions
     {
         extraRequiredPolicies ??= [];
 
-        var group = endpoints.MapGroup(prefix).WithGroupName(SwaggerConfiguration.Admin);
+        var group = endpoints.MapGroup(prefix).WithGroupName("Admin");
            // .RequireAuthorization([AuthorizationPolicy.Admin, ..extraRequiredPolicies]);
 
         if (groupTagName != null)
