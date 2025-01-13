@@ -1,5 +1,5 @@
 ﻿using Dapr.Workflow;
-using eShop.Workflow.TaskChaining.Activities;
+using Dapr.Workflow.Chaining.Activities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShop.Workflow.TaskChaining.Workflow
+namespace Dapr.Workflow.Chaining.Workflow
 {
     internal sealed class DemoWorkflow : Workflow<int, int[]>
     {

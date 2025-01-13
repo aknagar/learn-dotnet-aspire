@@ -18,11 +18,8 @@ builder.AddProject<Projects.Store>("store")
 
 builder.AddProject<Projects.eShopLite_Api>("eshoplite-api")
     .WithReference(secrets);
-    
 
-builder.AddProject<Projects.eShopLite_Worker>("eshoplite-worker");
-
-
-builder.AddProject<Projects.eShop_Workflow_TaskChaining>("eshop-workflow-taskchaining");
+builder.AddProject<Projects.Dapr_Workflow_Chaining>("dapr-workflow-chaining")
+    .WithDaprSidecar();
 
 builder.Build().Run();

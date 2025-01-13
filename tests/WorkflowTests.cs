@@ -1,12 +1,4 @@
-﻿using System.Threading.Tasks;
-using Dapr.Workflow;
-using Moq;
-using WorkflowConsoleApp;
-using WorkflowConsoleApp.Activities;
-using WorkflowConsoleApp.Workflows;
-using Xunit;
-
-namespace tests
+﻿namespace tests
 {
     /*
     [Trait("Example", "true")]

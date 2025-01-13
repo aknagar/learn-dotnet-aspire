@@ -11,6 +11,9 @@ https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/manage-env
 Aspire with Dapr
 https://github.com/SiddyHub/DaprWithAspire
 
+### Aspire with Dapr
+* Dapr workflow does not work with Worker asp.net temple as it requires an Http endpoint. Use Web api template to write Dapr worker.
+
 # Deploy a cloud-native application automatically
 
 The code in this repository supports a Learn module focused on automating CI/CD with .NET. The module shows you how to:

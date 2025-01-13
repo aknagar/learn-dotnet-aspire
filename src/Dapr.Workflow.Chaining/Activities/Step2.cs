@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShop.Workflow.TaskChaining.Activities
+namespace Dapr.Workflow.Chaining.Activities
 {
-    internal sealed class Step3 : WorkflowActivity<int, int>
+    internal sealed class Step2 : WorkflowActivity<int, int>
     {
         /// <summary>
         /// Override to implement async (non-blocking) workflow activity logic.
@@ -17,8 +17,8 @@ namespace eShop.Workflow.TaskChaining.Activities
         /// <returns>The output of the activity as a task.</returns>
         public override Task<int> RunAsync(WorkflowActivityContext context, int input)
         {
-            Console.WriteLine($@"Step 3: Received input: {input}.");
-            return Task.FromResult(input ^ 2);
+            Console.WriteLine($@"Step 2: Received input: {input}.");
+            return Task.FromResult(input + 2);
         }
     }
 }

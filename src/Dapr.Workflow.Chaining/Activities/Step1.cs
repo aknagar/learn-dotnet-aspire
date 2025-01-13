@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShop.Workflow.TaskChaining.Activities
+namespace Dapr.Workflow.Chaining.Activities
 {
     internal sealed class Step1 : WorkflowActivity<int, int>
     {
