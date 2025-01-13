@@ -4,7 +4,7 @@ using Dapr.Workflow.AsyncApi.Models;
 
 namespace Dapr.Workflow.AsyncApi.Workflows
 {
-    internal sealed class DemoWorkflow : Workflow<Transaction, bool>
+    internal sealed class AsyncWorkflow : Workflow<Transaction, bool>
     {
         /// <summary>
         /// Override to implement workflow logic.

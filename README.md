@@ -14,6 +14,12 @@ https://github.com/SiddyHub/DaprWithAspire
 ### Aspire with Dapr
 * Dapr workflow does not work with Worker asp.net temple as it requires an Http endpoint. Use Web api template to write Dapr worker.
 
+### Dapr
+
+## Workflow
+    Start Workflow: POST http://localhost:49677/v1.0-beta1/workflows/dapr/AsyncWorkflow/start
+    Check Workflow Status: http://localhost:49677/v1.0-beta1/workflows/dapr/<instance-id>
+
 # Deploy a cloud-native application automatically
 
 The code in this repository supports a Learn module focused on automating CI/CD with .NET. The module shows you how to:

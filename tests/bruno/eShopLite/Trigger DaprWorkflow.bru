@@ -1,0 +1,11 @@
+meta {
+  name: Trigger DaprWorkflow
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:49677/v1.0-beta1/workflows/dapr/AsyncWorkflow/start
+  body: none
+  auth: none
+}

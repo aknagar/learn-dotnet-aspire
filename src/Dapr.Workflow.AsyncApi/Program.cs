@@ -14,7 +14,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDaprWorkflow(options =>
 {
-    options.RegisterWorkflow<DemoWorkflow>();
+    options.RegisterWorkflow<AsyncWorkflow>();
     options.RegisterActivity<ProcessPaymentActivity>();
     options.RegisterActivity<NotifyWarehouseActivity>();
 });
@@ -39,7 +39,7 @@ var daprWorkflowClient = scope.ServiceProvider.GetRequiredService<DaprWorkflowCl
 
 var instanceId = $"demo-workflow-{Guid.NewGuid().ToString()[..8]}";
 var transaction = new Transaction(16.58m);
-await daprWorkflowClient.ScheduleNewWorkflowAsync(nameof(DemoWorkflow), instanceId, transaction);
+await daprWorkflowClient.ScheduleNewWorkflowAsync(nameof(AsyncWorkflow), instanceId, transaction);
 
 //Poll for status updates every second
 var status = await daprWorkflowClient.GetWorkflowStateAsync(instanceId);
