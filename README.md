@@ -1,4 +1,9 @@
-###
+### Run
+#### VS Code
+    \src\eShopLite.AppHost> dotnet run
+
+
+
 [Azure Developer CLI Sample browser](https://azure.github.io/awesome-azd/)
 
 [Aspire Samples](https://learn.microsoft.com/en-us/samples/browse/?expanded=dotnet&terms=aspire)
@@ -40,7 +45,10 @@ root/
         * Exceptions
     * ServiceDefaults
 * tests
+* docs
 
+### References
+[Dapr with Aspire](https://github.com/SiddyHub/DaprWithAspire)
 
 ### Deploy a cloud-native application automatically
 

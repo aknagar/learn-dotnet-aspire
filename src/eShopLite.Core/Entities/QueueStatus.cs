@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataEntities
+namespace eShopLite.Core.Entities
 {
     public class QueueStatus
     {

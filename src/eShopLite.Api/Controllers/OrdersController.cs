@@ -1,6 +1,5 @@
 ﻿using Azure.Messaging.ServiceBus;
-using DataEntities;
-using DotNet.Testcontainers;
+using eShopLite.Core.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.ServiceBus;

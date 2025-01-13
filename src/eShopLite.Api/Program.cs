@@ -1,10 +1,10 @@
 using Api.Routes.Weather;
 using eShopLite.Api.Routes;
-using Application;
-using Infrastructure;
 using Microsoft.Extensions.Azure;
 using eShopLite.Api.Routes.Orders;
 using Scalar.AspNetCore;
+using Application;
+using Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

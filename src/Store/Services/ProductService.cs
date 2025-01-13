@@ -1,4 +1,5 @@
-﻿using DataEntities;
+﻿
+using eShopLite.Core.Entities;
 using System.Text.Json;
 
 namespace Store.Services;

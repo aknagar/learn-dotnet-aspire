@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using DataEntities;
+using eShopLite.Core.Entities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

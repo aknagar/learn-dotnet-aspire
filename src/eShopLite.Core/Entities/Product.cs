@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace DataEntities;
+namespace eShopLite.Core.Entities;
 
 public class Product
 {
