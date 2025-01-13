@@ -1,0 +1,6 @@
+@Dapr.Workflow.AsyncApi_HostAddress = http://localhost:5046
+
+GET {{Dapr.Workflow.AsyncApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

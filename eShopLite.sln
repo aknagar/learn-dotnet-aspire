@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopLite.Worker", "src\eSh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapr.Workflow.Chaining", "src\Dapr.Workflow.Chaining\Dapr.Workflow.Chaining.csproj", "{AAD1E574-518C-4CCB-B25A-CA6158AFE0F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapr.Workflow.AsyncApi", "src\Dapr.Workflow.AsyncApi\Dapr.Workflow.AsyncApi.csproj", "{C9EE7A28-F11A-4CC5-8164-38884A4F5341}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{AAD1E574-518C-4CCB-B25A-CA6158AFE0F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAD1E574-518C-4CCB-B25A-CA6158AFE0F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAD1E574-518C-4CCB-B25A-CA6158AFE0F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9EE7A28-F11A-4CC5-8164-38884A4F5341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9EE7A28-F11A-4CC5-8164-38884A4F5341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9EE7A28-F11A-4CC5-8164-38884A4F5341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9EE7A28-F11A-4CC5-8164-38884A4F5341}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
