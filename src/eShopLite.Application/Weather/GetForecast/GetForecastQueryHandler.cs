@@ -1,3 +1,4 @@
+using eShopLite.Core.Interfaces;
 using FluentResults;
 using MediatR;
 

@@ -1,5 +1,6 @@
 ﻿using Application;
 using Application.Weather;
+using eShopLite.Core.Interfaces;
 using Infrastructure.Repositories;
 using Infrastructure.TestContainers;
 using Microsoft.Extensions.DependencyInjection;

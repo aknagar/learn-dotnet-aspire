@@ -1,5 +1,6 @@
 using Application.Weather;
 using eShopLite.Core;
+using eShopLite.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
