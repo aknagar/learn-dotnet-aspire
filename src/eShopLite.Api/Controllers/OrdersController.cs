@@ -68,10 +68,25 @@ namespace eShopLite.Api.Controllers
             return Accepted(response);
         }
 
+        
         [HttpGet]
-        public async Task<string> Get()
+        public Task<string> Get()
         {
-            return "Hello !";
+            return Task.FromResult<string>("Hello");
+        }
+        
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(string id)
+        {
+            var workflowState = await _daprWorkflowClient.GetWorkflowStateAsync(id);
+            var response = new
+            {
+                WorkflowInstanceId = id,
+                WorkflowStatus = workflowState.RuntimeStatus
+            };
+
+            return Ok(response);
         }
 
         

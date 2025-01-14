@@ -35,6 +35,15 @@ https://github.com/SiddyHub/DaprWithAspire
 ### Azure Container Apps
 https://azure.github.io/aca-dotnet-workshop/aca/00-workshop-intro/
 
+### Routing
+* Prefer Attribute-based routing over conventional routing
+* In Attribute based routing, prefer [HttpGet] pattern over [Route]
+* ```Route["api/[controller"]]``` is called token replacement.
+* Route templates applied to an action that begin with ```/``` or ```~/``` don't get combined with the route templates applied to the controller.
+* ```[HttpGet]``` GET /api/order
+* ```[HttpGet("{id}")]``` GET /api/order/abc
+* ```[HttpGet("status/{id}")]``` GET /api/order/status/abc
+
 ## Clean Architecture
 
 [Clean Architecture Reference](https://github.com/ardalis/CleanArchitecture/tree/main/src)
