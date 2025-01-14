@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dapr.Workflow.AsyncApi\Dapr.Workflow.AsyncApi.csproj" />
-    <ProjectReference Include="..\Dapr.Workflow.Chaining\Dapr.Workflow.Chaining.csproj" />
     <ProjectReference Include="..\eShopLite.Api\eShopLite.Api.csproj" />
     <ProjectReference Include="..\eShopLite.Worker\eShopLite.Worker.csproj" />
     <ProjectReference Include="..\eShopLite.Workflows\eShopLite.Workflows.csproj" />

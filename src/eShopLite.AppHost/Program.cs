@@ -10,9 +10,6 @@ var secrets = builder.ExecutionContext.IsPublishMode
 */
 var secrets = builder.AddConnectionString("secrets");
 
-builder.AddProject<Projects.Dapr_Workflow_Chaining>("dapr-workflow-chaining")
-    .WithDaprSidecar();
-
 builder.AddProject<Projects.Dapr_Workflow_AsyncApi>("dapr-workflow-asyncapi")
     .WithDaprSidecar();
 
