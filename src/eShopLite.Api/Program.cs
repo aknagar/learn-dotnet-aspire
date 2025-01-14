@@ -36,7 +36,7 @@ builder.Services.AddDaprWorkflow(options =>
 
 
 // Add other layers
-builder.AddApplication();
+//builder.AddApplication();
 builder.AddInfrastructure();
 
 //Add Keyvault client
