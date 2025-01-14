@@ -17,7 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-builder.Services.AddOpenApi();  // OpenAPI = swagger
+builder.Services.AddOpenApi();  // OpenAPI is the next version swagger
 
 builder.Services.AddControllers();
 

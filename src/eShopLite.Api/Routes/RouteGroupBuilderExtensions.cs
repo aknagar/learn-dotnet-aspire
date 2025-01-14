@@ -18,7 +18,7 @@ public static class RouteGroupBuilderExtensions
         if (groupTagName != null)
             group.WithTags(groupTagName);
 
-        //group.WithOpenApi();
+        group.WithOpenApi();
 
         return group;
     }
@@ -35,7 +35,7 @@ public static class RouteGroupBuilderExtensions
         if (groupTagName != null)
             group.WithTags(groupTagName);
 
-        //group.WithOpenApi();
+        group.WithOpenApi();
 
         return group;
     }
