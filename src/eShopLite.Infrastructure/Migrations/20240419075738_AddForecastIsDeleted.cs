@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Infrastructure.Migrations
+namespace eShopLite.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class AddForecastIsDeleted : Migration

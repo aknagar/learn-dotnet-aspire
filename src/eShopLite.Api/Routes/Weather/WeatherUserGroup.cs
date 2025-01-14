@@ -12,6 +12,8 @@ public static class WeatherUserGroup
 
         group.MapGet("/{date}", GetWeather.Handle);
         //.RequireAuthorization(AuthorizationPolicy.User);
+
+
         //group.MapPost("/", PostWeather.Handle);
             //.RequireAuthorization(AuthorizationPolicy.Write);
 

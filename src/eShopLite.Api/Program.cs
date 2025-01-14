@@ -12,6 +12,9 @@ using Azure.Security.KeyVault.Secrets;
 using Dapr.Workflow;
 using eShopLite.Api.Workflow;
 using eShopLite.Api.Activities;
+using eShopLite.Infrastructure;
+using eShopLite.Infrastructure.ProductData;
+using eShopLite.Infrastructure.WeatherData;
 
 var builder = WebApplication.CreateBuilder(args);
 

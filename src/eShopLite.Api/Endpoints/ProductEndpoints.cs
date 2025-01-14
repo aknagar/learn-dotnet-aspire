@@ -1,5 +1,6 @@
 ﻿using Azure.Security.KeyVault.Secrets;
 using eShopLite.Core.Entities;
+using eShopLite.Infrastructure.ProductData;
 using Microsoft.EntityFrameworkCore;
 
 namespace eShopLite.Api.Endpoints

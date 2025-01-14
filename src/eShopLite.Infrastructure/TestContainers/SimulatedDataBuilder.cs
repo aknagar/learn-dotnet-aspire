@@ -1,6 +1,7 @@
 
 using Bogus;
 using eShopLite.Core;
+using eShopLite.Infrastructure.WeatherData;
 
 namespace Infrastructure.TestContainers;
 

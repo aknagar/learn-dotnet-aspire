@@ -1,9 +1,10 @@
 using Application.Weather;
 using eShopLite.Core;
 using eShopLite.Core.Interfaces;
+using eShopLite.Infrastructure.WeatherData;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repositories;
+namespace eShopLite.Infrastructure.Repositories;
 
 public class WeatherRepository(WeatherDatabaseContext context) : IWeatherRepository
 {

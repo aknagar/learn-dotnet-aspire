@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
-namespace Infrastructure;
+namespace eShopLite.Infrastructure.WeatherData;
 
 public class WeatherDatabaseContext(IOptions<InfrastructureConfig> config) : DbContext, IUnitOfWork
 {

@@ -1,12 +1,13 @@
 ﻿using Application;
 using Application.Weather;
 using eShopLite.Core.Interfaces;
-using Infrastructure.Repositories;
+using eShopLite.Infrastructure.Repositories;
+using eShopLite.Infrastructure.WeatherData;
 using Infrastructure.TestContainers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Infrastructure;
+namespace eShopLite.Infrastructure;
 
 public static class DependencyInjection
 {
