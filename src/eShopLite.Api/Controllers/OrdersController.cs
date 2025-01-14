@@ -45,7 +45,7 @@ namespace eShopLite.Api.Controllers
             await _serviceBusSender.SendMessageAsync(orderMessage);
             */
 
-            /*
+            
             // Start the workflow
             Console.WriteLine("Starting workflow: Name={0}, Quantity={1}, TotalCost={2}", order.Name, order.Quantity, order.TotalCost);
 
@@ -53,13 +53,19 @@ namespace eShopLite.Api.Controllers
                 name: nameof(OrderProcessingWorkflow),
                 input: order);
 
+            /*
             // Wait for the workflow to start and confirm the input
             WorkflowState state = await _daprWorkflowClient.WaitForWorkflowStartAsync(
                 instanceId: instanceId);
 
             Console.WriteLine("Your workflow has started. Here is the status of the workflow: {0}", Enum.GetName(typeof(WorkflowRuntimeStatus), state.RuntimeStatus));
             */
-            return Accepted();
+          
+            var response = new
+            {
+                InstanceId = instanceId
+            };
+            return Accepted(response);
         }
 
         [HttpGet]
