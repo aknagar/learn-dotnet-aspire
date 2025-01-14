@@ -15,7 +15,7 @@ namespace eShopLite.Api
 
     public static class Extensions
     {
-        public static void CreateDbIfNotExists(this IHost host)
+        public static void CreateProductDbIfNotExists(this IHost host)
         {
             using var scope = host.Services.CreateScope();
 

@@ -64,7 +64,9 @@ if (app.Environment.IsDevelopment())
 
 app.MapDefaultEndpoints();
 
-app.CreateDbIfNotExists();
+app.CreateProductDbIfNotExists();
+
+app.CreateWeatherDbIfNotExists();
 
 var secretClient = app.Services.GetService<SecretClient>();
 
