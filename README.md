@@ -17,12 +17,19 @@ Aspire with Dapr
 https://github.com/SiddyHub/DaprWithAspire
 
 ### Aspire with Dapr
-* Dapr workflow does not work with Worker asp.net temple as it requires an Http endpoint. Use Web api template to write Dapr worker.
+* Dapr workflow does not work with Worker asp.net temple as it requires an Http endpoint. Use Web api template to write Dapr workflow.
 
 ### Dapr
 
 ## Workflow
+* Go to Dapr side car (*-dapr-cli) in Aspire and click View details in overflow button
+* Select Http Endpoint port number (i.e 49677)
+### Start workflow
     Start Workflow: POST http://localhost:49677/v1.0-beta1/workflows/dapr/AsyncWorkflow/start
+
+     
+
+### Check workflow status
     Check Workflow Status: http://localhost:49677/v1.0-beta1/workflows/dapr/<instance-id>
 
 ## Clean Architecture
@@ -49,6 +56,11 @@ root/
 
 ### References
 [Dapr with Aspire](https://github.com/SiddyHub/DaprWithAspire)
+
+### Errors:
+* The gRPC server for Durable Task gRPC worker is unavailable. Will continue retrying. - Indicates Dapr side car is not running
+
+
 
 ### Deploy a cloud-native application automatically
 

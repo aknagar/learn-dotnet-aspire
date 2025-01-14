@@ -1,0 +1,25 @@
+meta {
+  name: StartWorkflow
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:61888/v1.0-beta1/workflows/dapr/OrderProcessingWorkflow/start
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Name": "Riley",
+    "TotalCost": 100,
+    "Quantity": 2
+  }
+}
+
+body:multipart-form {
+  name: Riley
+  totalCost: 100
+  quantity: 2
+}

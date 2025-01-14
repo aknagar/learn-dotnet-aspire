@@ -25,4 +25,7 @@ builder.AddProject<Projects.Dapr_Workflow_Chaining>("dapr-workflow-chaining")
 builder.AddProject<Projects.Dapr_Workflow_AsyncApi>("dapr-workflow-asyncapi")
     .WithDaprSidecar();
 
+builder.AddProject<Projects.eShopLite_Workflows>("eshoplite-workflows")
+    .WithDaprSidecar();
+
 builder.Build().Run();
