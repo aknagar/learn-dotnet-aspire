@@ -13,6 +13,8 @@ internal class GetForecastQueryHandler(IWeatherRepository weatherRepository)
         try
         {
             var forecast = await weatherRepository.GetForecastAsync(request.From);
+            if (forecast is null)
+                return Result.Fail(new Error("No Forecast exists"));
             return new GetForecastQueryResponse(forecast.Date, forecast.TemperatureC, forecast.Summary);
         }
         catch (Exception ex)
