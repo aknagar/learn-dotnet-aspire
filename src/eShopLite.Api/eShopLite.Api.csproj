@@ -27,7 +27,6 @@
   <ItemGroup>
     <ProjectReference Include="..\eShopLite.Infrastructure\eShopLite.Infrastructure.csproj" />
     <ProjectReference Include="..\eShopLite.ServiceDefaults\eShopLite.ServiceDefaults.csproj" />
-    <ProjectReference Include="..\eShopLite.Workflows\eShopLite.Workflows.csproj" />
   </ItemGroup>
 
 </Project>

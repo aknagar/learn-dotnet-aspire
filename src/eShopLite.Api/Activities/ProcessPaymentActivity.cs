@@ -1,7 +1,6 @@
 ﻿using Dapr.Client;
 using Dapr.Workflow;
 using eShopLite.Api.Models;
-using eShopLite.Workflows.Models;
 
 namespace eShopLite.Api.Activities
 {
