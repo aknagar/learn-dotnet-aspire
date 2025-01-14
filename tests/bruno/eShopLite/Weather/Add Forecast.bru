@@ -4,8 +4,16 @@ meta {
   seq: 2
 }
 
-get {
-  url: 
-  body: none
+post {
+  url: http://localhost:5116/weather
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "Date": "2025-01-01",
+    "TemperatureC": 25,
+    "Summary": "Normal temperature"
+  }
 }
