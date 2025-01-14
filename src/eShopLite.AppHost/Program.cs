@@ -10,8 +10,6 @@ var secrets = builder.ExecutionContext.IsPublishMode
 */
 var secrets = builder.AddConnectionString("secrets");
 
-//var products = builder.AddProject<Projects.Products>("products").WithReference(secrets); //products name will be used to discover the address of the Products project.
-
 builder.AddProject<Projects.Dapr_Workflow_Chaining>("dapr-workflow-chaining")
     .WithDaprSidecar();
 
