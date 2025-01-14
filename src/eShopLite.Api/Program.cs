@@ -9,6 +9,9 @@ using eShopLite.Api;
 using Microsoft.EntityFrameworkCore;
 using eShopLite.Api.Endpoints;
 using Azure.Security.KeyVault.Secrets;
+using Dapr.Workflow;
+using eShopLite.Api.Workflow;
+using eShopLite.Api.Activities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +19,21 @@ builder.AddServiceDefaults();
 
 builder.Services.AddOpenApi();  // OpenAPI = swagger
 
-builder.Services.AddControllers(); 
+builder.Services.AddControllers();
+
+// Add Dapr Workflow
+builder.Services.AddDaprWorkflow(options =>
+{  
+    options.RegisterWorkflow<OrderProcessingWorkflow>();
+        
+    // These are the activities that get invoked by the workflow(s).
+    options.RegisterActivity<NotifyActivity>();
+    options.RegisterActivity<ReserveInventoryActivity>();
+    options.RegisterActivity<ProcessPaymentActivity>();
+    options.RegisterActivity<UpdateInventoryActivity>();
+
+});
+
 
 // Add other layers
 builder.AddApplication();
@@ -28,6 +45,8 @@ builder.AddAzureKeyVaultClient("secrets", settings => settings.DisableHealthChec
 // Add Service Bus client
 builder.AddAzureServiceBusClient("serviceBus");
 
+
+
 builder.Services.AddDbContext<ProductDataContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("ProductsContext") ?? throw new InvalidOperationException("Connection string 'ProductsContext' not found.")));
 
@@ -38,7 +57,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi(); //publish endpoint at /openapi/v1.json
-    //app.MapScalarApiReference(); // similar to swagger UI at /scalar/v1
+    app.MapScalarApiReference(); // similar to swagger UI at /scalar/v1
 };
 
 app.MapDefaultEndpoints();

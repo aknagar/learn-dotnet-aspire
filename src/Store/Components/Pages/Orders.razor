@@ -1,0 +1,66 @@
+﻿@page "/orders"
+@using System.ComponentModel.DataAnnotations
+@inject IHttpClientFactory httpClientFactory
+
+<PageTitle>Submit Order</PageTitle>
+
+<h3>Order Form</h3>
+
+<EditForm Model="@order" OnValidSubmit="@HandleValidSubmit" FormName="orders">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label for="name">Name:</label>
+        <InputText id="name" @bind-Value="order.Name" />
+        <ValidationMessage For="@(() => order.Name)" />
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <InputText id="email" @bind-Value="order.Email" />
+        <ValidationMessage For="@(() => order.Email)" />
+    </div>
+
+    <div>
+        <label for="details">Order Details:</label>
+        <InputTextArea id="details" @bind-Value="order.Details" />
+        <ValidationMessage For="@(() => order.Details)" />
+    </div>
+
+    <button type="submit">Submit Order</button>
+</EditForm>
+
+@code {
+    private Order order = new Order();
+
+    private void HandleValidSubmit()
+    {
+        /*
+        var httpClient = httpClientFactory.CreateClient();
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "fff");
+        request.Headers.Add("Accept", "application/vnd.github.v3+json");
+        request.Headers.Add("User-Agent", "HttpClientFactory-Sample");
+        request.Content.A
+
+        var response = await httpClient.SendAsync(order);
+
+        */
+        // Handle the form submission, e.g., save the order to a database
+        Console.WriteLine("Order submitted successfully!");
+    }
+
+    public class Order
+    {
+        [Required(ErrorMessage = "Name is required")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email address")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Order details are required")]
+        public string Details { get; set; }
+    }
+}

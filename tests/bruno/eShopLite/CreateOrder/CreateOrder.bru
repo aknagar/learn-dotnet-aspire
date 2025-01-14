@@ -1,0 +1,19 @@
+meta {
+  name: CreateOrder
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5116/api/orders
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Name": "Riley",
+    "TotalCost": 100,
+    "Quantity": 2
+  }
+}

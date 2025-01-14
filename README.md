@@ -32,6 +32,9 @@ https://github.com/SiddyHub/DaprWithAspire
 ### Check workflow status
     Check Workflow Status: http://localhost:49677/v1.0-beta1/workflows/dapr/<instance-id>
 
+### Azure Container Apps
+https://azure.github.io/aca-dotnet-workshop/aca/00-workshop-intro/
+
 ## Clean Architecture
 
 [Clean Architecture Reference](https://github.com/ardalis/CleanArchitecture/tree/main/src)

@@ -13,11 +13,14 @@ var secrets = builder.AddConnectionString("secrets");
 builder.AddProject<Projects.Dapr_Workflow_AsyncApi>("dapr-workflow-asyncapi")
     .WithDaprSidecar();
 
+/*
 builder.AddProject<Projects.eShopLite_Workflows>("eshoplite-workflows")
     .WithDaprSidecar();
+*/
 
 var api = builder.AddProject<Projects.eShopLite_Api>("eshoplite-api")
-    .WithReference(secrets);
+    .WithReference(secrets)
+    .WithDaprSidecar();
 
 builder.AddProject<Projects.Store>("store")
     .WithExternalHttpEndpoints()
