@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Infrastructure.Migrations
 {
-    [DbContext(typeof(DatabaseContext))]
+    [DbContext(typeof(WeatherDatabaseContext))]
     [Migration("20240419075738_AddForecastIsDeleted")]
     partial class AddForecastIsDeleted
     {

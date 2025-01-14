@@ -21,6 +21,8 @@ builder.Services.AddOpenApi();  // OpenAPI is the next version swagger
 
 builder.Services.AddControllers();
 
+
+
 // Add Dapr Workflow
 builder.Services.AddDaprWorkflow(options =>
 {  
@@ -61,6 +63,8 @@ if (app.Environment.IsDevelopment())
 };
 
 app.MapDefaultEndpoints();
+
+app.CreateDbIfNotExists();
 
 var secretClient = app.Services.GetService<SecretClient>();
 

@@ -46,7 +46,7 @@ public class TestContainersFactory(TestContainersConfig config, ILogger<TestCont
                     EnableSensitiveDataLogging = true
                 });
                 
-                await using var context = new DatabaseContext(options);
+                await using var context = new WeatherDatabaseContext(options);
                 
                 if (config.RunMigrations)
                 {

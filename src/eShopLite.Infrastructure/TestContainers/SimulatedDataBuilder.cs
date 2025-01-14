@@ -51,7 +51,7 @@ public class SimulatedDataBuilder
         };
     }
     
-    public Task<SavedData> Save(DatabaseContext context, CancellationToken cancellationToken = default)
+    public Task<SavedData> Save(WeatherDatabaseContext context, CancellationToken cancellationToken = default)
     {
         return Generate().Save(context, cancellationToken);
     }
@@ -61,7 +61,7 @@ public class SimulatedDataBuilder
         private bool _isSaved;
         public required List<Forecast> Forecasts { get; init; }
         
-        public async Task<SavedData> Save(DatabaseContext context, CancellationToken cancellationToken = default)
+        public async Task<SavedData> Save(WeatherDatabaseContext context, CancellationToken cancellationToken = default)
         {
             if (!_isSaved)
             {

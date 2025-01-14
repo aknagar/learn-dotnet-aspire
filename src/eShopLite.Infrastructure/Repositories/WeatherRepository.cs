@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
 
-public class WeatherRepository(DatabaseContext context) : IWeatherRepository
+public class WeatherRepository(WeatherDatabaseContext context) : IWeatherRepository
 {
     public async Task<Forecast?> GetForecastAsync(DateOnly date)
     {
         return await context.Forecasts
-            .Where(f => f.Date == date && !f.IsDeleted)
+            .Where(f => !f.IsDeleted)
             .FirstOrDefaultAsync();
     }
 

@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 
 namespace Infrastructure;
 
-public class DatabaseContext(IOptions<InfrastructureConfig> config) : DbContext, IUnitOfWork
+public class WeatherDatabaseContext(IOptions<InfrastructureConfig> config) : DbContext, IUnitOfWork
 {
     public DbSet<Forecast> Forecasts { get; set; } = null!;
 

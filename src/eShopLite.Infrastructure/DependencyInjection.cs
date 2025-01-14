@@ -21,18 +21,18 @@ public static class DependencyInjection
             builder.AddTestContainers();
         }
         
-        builder.Services.AddDbContext<DatabaseContext>();
+        builder.Services.AddDbContext<WeatherDatabaseContext>();
 
         builder.Services.AddScoped<IWeatherRepository, WeatherRepository>();
         
-        builder.Services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<DatabaseContext>());
+        builder.Services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<WeatherDatabaseContext>());
 
         return builder;
     }
     
     public static IHealthChecksBuilder AddInfrastructureHealthChecks(this IHealthChecksBuilder healthChecksBuilder)
     {
-        healthChecksBuilder.AddDbContextCheck<DatabaseContext>();
+        healthChecksBuilder.AddDbContextCheck<WeatherDatabaseContext>();
 
         return healthChecksBuilder;
     }

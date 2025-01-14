@@ -96,6 +96,7 @@ Infrastructure:
 
 ### References
 [Dapr with Aspire](https://github.com/SiddyHub/DaprWithAspire)
+[Dotnet Template](https://github.com/varianter/dotnet-template/tree/main)
 
 ### Errors:
 * The gRPC server for Durable Task gRPC worker is unavailable. Will continue retrying. - Indicates Dapr side car is not running
