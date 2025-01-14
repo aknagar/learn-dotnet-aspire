@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\eShopLite.Api\eShopLite.Api.csproj" />
     <ProjectReference Include="..\eShopLite.Core\eShopLite.Core.csproj" />
     <ProjectReference Include="..\eShopLite.ServiceDefaults\eShopLite.ServiceDefaults.csproj" />
   </ItemGroup>

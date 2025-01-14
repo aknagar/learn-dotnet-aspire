@@ -10,14 +10,7 @@ var secrets = builder.ExecutionContext.IsPublishMode
 */
 var secrets = builder.AddConnectionString("secrets");
 
-var products = builder.AddProject<Projects.Products>("products").WithReference(secrets); //products name will be used to discover the address of the Products project.
-
-builder.AddProject<Projects.Store>("store")
-    .WithExternalHttpEndpoints()
-    .WithReference(products);  // store project depends on products project
-
-builder.AddProject<Projects.eShopLite_Api>("eshoplite-api")
-    .WithReference(secrets);
+//var products = builder.AddProject<Projects.Products>("products").WithReference(secrets); //products name will be used to discover the address of the Products project.
 
 builder.AddProject<Projects.Dapr_Workflow_Chaining>("dapr-workflow-chaining")
     .WithDaprSidecar();
@@ -27,5 +20,12 @@ builder.AddProject<Projects.Dapr_Workflow_AsyncApi>("dapr-workflow-asyncapi")
 
 builder.AddProject<Projects.eShopLite_Workflows>("eshoplite-workflows")
     .WithDaprSidecar();
+
+var api = builder.AddProject<Projects.eShopLite_Api>("eshoplite-api")
+    .WithReference(secrets);
+
+builder.AddProject<Projects.Store>("store")
+    .WithExternalHttpEndpoints()
+    .WithReference(api);  // store project depends on products project
 
 builder.Build().Run();

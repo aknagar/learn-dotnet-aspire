@@ -5,6 +5,10 @@ using eShopLite.Api.Routes.Orders;
 using Scalar.AspNetCore;
 using Application;
 using Infrastructure;
+using eShopLite.Api;
+using Microsoft.EntityFrameworkCore;
+using eShopLite.Api.Endpoints;
+using Azure.Security.KeyVault.Secrets;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +28,10 @@ builder.AddAzureKeyVaultClient("secrets", settings => settings.DisableHealthChec
 // Add Service Bus client
 builder.AddAzureServiceBusClient("serviceBus");
 
+builder.Services.AddDbContext<ProductDataContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("ProductsContext") ?? throw new InvalidOperationException("Connection string 'ProductsContext' not found.")));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,6 +42,11 @@ if (app.Environment.IsDevelopment())
 };
 
 app.MapDefaultEndpoints();
+
+var secretClient = app.Services.GetService<SecretClient>();
+
+// This is a plug and play mechanism where we are plugging /product endpoints
+app.MapProductEndpoints(secretClient);
 
 // https://github.com/varianter/dotnet-template
 app.MapWeatherUserGroup()

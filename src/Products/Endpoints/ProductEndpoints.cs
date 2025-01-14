@@ -1,4 +1,5 @@
 ﻿using Azure.Security.KeyVault.Secrets;
+using eShopLite.Api;
 using eShopLite.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Products.Data;

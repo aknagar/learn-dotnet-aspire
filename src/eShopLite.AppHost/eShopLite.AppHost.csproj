@@ -24,7 +24,6 @@
     <ProjectReference Include="..\eShopLite.Api\eShopLite.Api.csproj" />
     <ProjectReference Include="..\eShopLite.Worker\eShopLite.Worker.csproj" />
     <ProjectReference Include="..\eShopLite.Workflows\eShopLite.Workflows.csproj" />
-    <ProjectReference Include="..\Products\Products.csproj" />
     <ProjectReference Include="..\Store\Store.csproj" />
   </ItemGroup>
 
