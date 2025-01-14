@@ -66,6 +66,34 @@ root/
 * tests
 * docs
 
+Domain Models are of 3 types: 
+* Entities
+* ValueObjects
+* AggregateRoots
+
+If we separate Presentation layer(which is self explanatory), then essentially we have 3 layers: Domain(Core), Application, Infrastructure
+
+- Infastructure --> Application (UseCases) --> Core(Domain)
+- Infrastructure --> Core(Domain)
+
+* API controllers fall in Infrastructure
+* Repositories fall in Infrastructure
+* 
+
+Application:
+* Commands
+* Queries
+* EventHandlers
+* Models
+
+Infrastructure:
+* Repositories
+* Controllers
+* Data
+* Email
+* ServiceClients
+
+
 ### References
 [Dapr with Aspire](https://github.com/SiddyHub/DaprWithAspire)
 
