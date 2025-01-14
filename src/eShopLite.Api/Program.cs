@@ -4,8 +4,6 @@ using Microsoft.Extensions.Azure;
 using eShopLite.Api.Routes.Orders;
 using Scalar.AspNetCore;
 using Application;
-using Infrastructure;
-using eShopLite.Api;
 using Microsoft.EntityFrameworkCore;
 using eShopLite.Api.Endpoints;
 using Azure.Security.KeyVault.Secrets;
@@ -24,8 +22,6 @@ builder.Services.AddOpenApi();  // OpenAPI is the next version swagger
 
 builder.Services.AddControllers();
 
-
-
 // Add Dapr Workflow
 builder.Services.AddDaprWorkflow(options =>
 {  
@@ -38,7 +34,6 @@ builder.Services.AddDaprWorkflow(options =>
     options.RegisterActivity<UpdateInventoryActivity>();
 
 });
-
 
 // Add other layers
 builder.AddApplication();

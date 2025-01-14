@@ -3,7 +3,6 @@ using Application.Weather;
 using eShopLite.Core.Interfaces;
 using eShopLite.Infrastructure.Repositories;
 using eShopLite.Infrastructure.WeatherData;
-using Infrastructure.TestContainers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -14,13 +13,7 @@ public static class DependencyInjection
     public static IHostApplicationBuilder AddInfrastructure(this IHostApplicationBuilder builder)
     {
         builder
-            .AddInfrastructureConfig()
-            .AddTestContainersConfig(out var currentTestContainersConfig);
-
-        if (currentTestContainersConfig.Enabled)
-        {
-            builder.AddTestContainers();
-        }
+            .AddInfrastructureConfig();
         
         builder.Services.AddDbContext<WeatherDatabaseContext>();
 
