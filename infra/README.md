@@ -1,3 +1,18 @@
+## Azure Developer CLI
+
+azd up
+* azd provision
+* azd deploy
+	
+Notes:
+
+* azd up keeps the infra provisioning code in-memory
+* use ```azd infra``` synth to dump it to file
+* azd infra synth - creates infra folder with bicep files
+	
+* azd env list
+* azd env set
+* ```azd env new local```: creates new envionment
 
 azd up
 

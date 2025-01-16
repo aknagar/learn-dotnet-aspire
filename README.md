@@ -2,7 +2,11 @@
 #### VS Code
     \src\eShopLite.AppHost> dotnet run
 
-
+#### Azure Resources
+1. Container Registry
+2. Container Apps Environment
+3. Logs Analystics
+4. User Managed Identity, and more
 
 [Azure Developer CLI Sample browser](https://azure.github.io/awesome-azd/)
 
@@ -12,12 +16,15 @@
 https://medium.com/@ravipatel.it/managing-configuration-and-environment-variables-in-net-b1c10d69d3d2
 https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/manage-environment-variables#environment-specific-env-file
 
-###
-Aspire with Dapr
-https://github.com/SiddyHub/DaprWithAspire
+### Azd
+
+
 
 ### Aspire with Dapr
 * Dapr workflow does not work with Worker asp.net temple as it requires an Http endpoint. Use Web api template to write Dapr workflow.
+
+Aspire with Dapr
+https://github.com/SiddyHub/DaprWithAspire
 
 ### Dapr
 
@@ -44,55 +51,19 @@ https://azure.github.io/aca-dotnet-workshop/aca/00-workshop-intro/
 * ```[HttpGet("{id}")]``` GET /api/order/abc
 * ```[HttpGet("status/{id}")]``` GET /api/order/status/abc
 
-## Clean Architecture
+## Lean Architecture
 
-[Clean Architecture Reference](https://github.com/ardalis/CleanArchitecture/tree/main/src)
-
-root/
-
-* src
-    * AppHost
-    * UI
-    * Api
-    * UseCases
-    * Infrastructure
-    * Core
-        * Entities
-        * Interfaces
-        * Services
-        * Constants
-        * Exceptions
-    * ServiceDefaults
-* tests
-* docs
-
-Domain Models are of 3 types: 
-* Entities
-* ValueObjects
-* AggregateRoots
-
-If we separate Presentation layer(which is self explanatory), then essentially we have 3 layers: Domain(Core), Application, Infrastructure
-
+Clean Architecture has this Application Layer.
 - Infastructure --> Application (UseCases) --> Core(Domain)
 - Infrastructure --> Core(Domain)
 
-* API controllers fall in Infrastructure
-* Repositories fall in Infrastructure
-* 
+How abt if we remove Application layer and put everything in Core.?
 
-Application:
-* Commands
-* Queries
-* EventHandlers
-* Models
+UI --> Api --> Infrastructure --> Core --> Shared
 
-Infrastructure:
-* Repositories
-* Controllers
-* Data
-* Email
-* ServiceClients
+Shared: Any utilities project that might be used to share across multiple repositoris
 
+###
 
 ### References
 [Dapr with Aspire](https://github.com/SiddyHub/DaprWithAspire)
