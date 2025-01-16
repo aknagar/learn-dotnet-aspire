@@ -16,8 +16,29 @@
 https://medium.com/@ravipatel.it/managing-configuration-and-environment-variables-in-net-b1c10d69d3d2
 https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/manage-environment-variables#environment-specific-env-file
 
-### Azd
+## Azure Developer CLI
 
+azd up
+* azd provision
+* azd deploy
+	dotnet publish
+	
+Notes:
+
+* azd up keeps the infra provisioning code in-memory
+* use ```azd infra synth``` to dump it to file
+* azd infra synth - creates infra folder with bicep files
+	
+* azd env list
+* azd env set
+* ```azd env new local```: creates new envionment
+
+azd up
+
+azd init
+
+
+[Hello Azd](https://github.com/Azure-Samples/hello-azd)
 
 
 ### Aspire with Dapr
@@ -71,6 +92,7 @@ Shared: Any utilities project that might be used to share across multiple reposi
 
 ### Errors:
 * The gRPC server for Durable Task gRPC worker is unavailable. Will continue retrying. - Indicates Dapr side car is not running
+* ERROR: environment already initialized to local - Remov .azure folder and run azd init again
 
 
 
