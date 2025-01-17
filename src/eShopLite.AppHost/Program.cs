@@ -8,7 +8,8 @@ var secrets = builder.ExecutionContext.IsPublishMode
     ? builder.AddAzureKeyVault("secrets")
     : builder.AddConnectionString("secrets");
 */
-var secrets = builder.AddConnectionString("secrets");
+
+// var secrets = builder.AddConnectionString("secrets");
 
 
 /*
@@ -17,7 +18,7 @@ builder.AddProject<Projects.Dapr_Workflow_AsyncApi>("dapr-workflow-asyncapi")
 */
 
 var api = builder.AddProject<Projects.eShopLite_Api>("eshoplite-api")
-    .WithReference(secrets)
+   // .WithReference(secrets)
     .WithDaprSidecar();
 
 builder.AddProject<Projects.Store>("store")

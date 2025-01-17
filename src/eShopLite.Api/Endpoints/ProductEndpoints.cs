@@ -12,7 +12,7 @@ namespace eShopLite.Api.Endpoints
         {
             var group = routes.MapGroup("/api/Product");
 
-            var secret = secretClient.GetSecret("AspireTestSecret");
+            // var secret = secretClient.GetSecret("AspireTestSecret");
 
             group.MapGet("/", async (ProductDataContext db) =>
             {

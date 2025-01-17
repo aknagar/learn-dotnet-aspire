@@ -40,7 +40,7 @@ builder.AddApplication();
 builder.AddInfrastructure();
 
 //Add Keyvault client
-builder.AddAzureKeyVaultClient("secrets", settings => settings.DisableHealthChecks = true);
+//builder.AddAzureKeyVaultClient("secrets", settings => settings.DisableHealthChecks = true);
 
 // Add Service Bus client
 builder.AddAzureServiceBusClient("serviceBus");
