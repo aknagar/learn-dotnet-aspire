@@ -2,7 +2,7 @@
 #### VS Code
     \src\eShopLite.AppHost> dotnet run
 
-### API Documentation
+#### API Documentation
 This project uses OpenAPI for API documentation. See [OPENAPI_DOCUMENTATION.md](OPENAPI_DOCUMENTATION.md) for details on the NuGet packages used and how to access the documentation.
 
 #### Azure Resources
