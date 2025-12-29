@@ -37,13 +37,13 @@ The OpenAPI functionality is configured in `Program.cs`:
 
 ```csharp
 // Add OpenAPI services
-builder.Services.AddOpenApi();  // OpenAPI is the next version of swagger
+builder.Services.AddOpenApi();  // OpenAPI is the next version swagger
 
 // Configure middleware (in development environment)
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();           // Publishes endpoint at /openapi/v1.json
-    app.MapScalarApiReference(); // Provides UI at /scalar/v1
+    app.MapOpenApi(); //publish endpoint at /openapi/v1.json
+    app.MapScalarApiReference(); // similar to swagger UI at /scalar/v1
 }
 ```
 
